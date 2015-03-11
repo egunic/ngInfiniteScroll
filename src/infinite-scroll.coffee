@@ -13,7 +13,8 @@ mod.directive 'infiniteScroll', ['$rootScope', '$window', '$interval', 'THROTTLE
     infiniteScrollListenForEvent: '@'
 
   link: (scope, elem, attrs) ->
-    windowElement = angular.element($window)
+
+    windowElement = elem.scrollParent()
 
     scrollDistance = null
     scrollEnabled = null
